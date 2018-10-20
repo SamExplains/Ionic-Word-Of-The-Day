@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {Component, OnInit} from '@angular/core';
+import { IonicPage } from 'ionic-angular';
+import {Word} from "../../data/word.interface";
+import words from "../../data/dailyword"
 /**
  * Generated class for the LibraryPage page.
  *
@@ -13,13 +14,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-library',
   templateUrl: 'library.html',
 })
-export class LibraryPage {
+export class LibraryPage implements OnInit{
+  wordCollection: { category: string, words: Word[], icon:string }[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LibraryPage');
+  ngOnInit(){
+    this.wordCollection = words;
   }
 
 }
