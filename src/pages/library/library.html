@@ -1,16 +1,19 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Words Library</ion-title>
+    <ion-title text-center>Words Library</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
   <h3 text-center >Select your favorite word.</h3>
   <ion-list>
-    <button *ngFor="let wordGroup of wordCollection" ion-item>Word</button>
+    <button ion-item *ngFor="let wordGroup of wordCollection" [navPush]="wordsPage" [navParams]="wordGroup">
+      <ion-icon [name]="wordGroup.icon" item-left></ion-icon>
+      <b>{{wordGroup.category }}</b>
+      <p>{{wordGroup.words.length}} Quotes </p>
+    </button>
   </ion-list>
 </ion-content>

@@ -1,25 +1,26 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the WordsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {Component, OnInit} from '@angular/core';
+import { IonicPage, NavParams } from 'ionic-angular';
+import {Word} from "../../data/word.interface";
 
 @IonicPage()
 @Component({
   selector: 'page-words',
   templateUrl: 'words.html',
 })
-export class WordsPage {
+export class WordsPage implements OnInit{
+  wordGroup: { category: string, words: Word[], icon:string };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WordsPage');
+  ngOnInit(){
+    this.wordGroup = this.navParams.data;
   }
+
+  //Alternate method with the Elvis operator (?)
+  // ionViewDidLoad() {
+  //   console.log('ionViewDidLoad WordsPage');
+  //   this.wordGroup = this.navParams.data;
+  // }
 
 }

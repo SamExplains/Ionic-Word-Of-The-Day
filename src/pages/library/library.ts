@@ -2,12 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { IonicPage } from 'ionic-angular';
 import {Word} from "../../data/word.interface";
 import words from "../../data/dailyword"
-/**
- * Generated class for the LibraryPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {WordsPage} from "../words/words";
 
 @IonicPage()
 @Component({
@@ -15,6 +10,7 @@ import words from "../../data/dailyword"
   templateUrl: 'library.html',
 })
 export class LibraryPage implements OnInit{
+  wordsPage = WordsPage;
   wordCollection: { category: string, words: Word[], icon:string }[];
 
   ngOnInit(){

@@ -1,6 +1,6 @@
 export default [
   {
-    category: 'funny',
+    category: 'Funny',
     words: [
       {
       id: '1',
@@ -18,10 +18,10 @@ export default [
       text: 'Risus Ridiculus Porta Egestas'
     }
   ],
-    icon: 'brush'
+    icon: 'happy'
   },
   {
-    category: 'witty',
+    category: 'Slang',
     words: [
       {
         id: '4',
@@ -39,7 +39,7 @@ export default [
         text: 'Sed posuere consectetur est at lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod.'
       }
     ],
-    icon: 'battery-charging'
+    icon: 'school'
   }
 
 
