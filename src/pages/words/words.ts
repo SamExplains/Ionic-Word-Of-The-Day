@@ -17,6 +17,10 @@ export class WordsPage implements OnInit{
     this.wordGroup = this.navParams.data;
   }
 
+  onAddToFavorite(){
+
+  }
+
   //Alternate method with the Elvis operator (?)
   // ionViewDidLoad() {
   //   console.log('ionViewDidLoad WordsPage');

@@ -7,6 +7,21 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="card-background-page" padding>
+
+  <ion-card *ngFor="let word of wordGroup.words; let i = index">
+    <ion-card-header>
+      No. {{ i + 1}}
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{word.text}}</p>
+      <p><b>{{word.person}}</b></p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col text-right>
+        <button ion-button clear (click)="onAddToFavorite(word)" >Favorite</button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 
 </ion-content>
