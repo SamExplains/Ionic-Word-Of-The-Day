@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AlertController, IonicPage, NavParams} from 'ionic-angular';
 import {Word} from "../../data/word.interface";
+import {WordsService} from "../../services/words";
 
 @IonicPage()
 @Component({
@@ -10,21 +11,21 @@ import {Word} from "../../data/word.interface";
 export class WordsPage implements OnInit{
   wordGroup: { category: string, words: Word[], icon:string };
 
-  constructor(private navParams: NavParams, private alertCtr: AlertController) {
+  constructor(private navParams: NavParams, private alertCtr: AlertController, private wordsService: WordsService) {
   }
 
   ngOnInit(){
     this.wordGroup = this.navParams.data;
   }
 
-  onAddToFavorite(selectedQuote: Word){
+  onAddToFavorite(selectedWord: Word){
     const alert = this.alertCtr.create({
       title: 'Add Word',
       subTitle: 'Is that OK?',
       message: 'Is this the word you would like to favorite?',
       buttons: [{
         text: 'Sure',
-        handler: () => {console.log('Clickity.')},
+        handler: () => {this.wordsService.addWordToFavorites(selectedWord)},
       },
       {
         text: 'Nope',

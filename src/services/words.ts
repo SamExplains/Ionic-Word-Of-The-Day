@@ -5,6 +5,7 @@ export class WordsService{
 
   addWordToFavorites(word: Word){
     this.favoriteWords.push(word);
+    console.log(this.favoriteWords);
   }
 
   removeWordFromFavorites(word: Word){
