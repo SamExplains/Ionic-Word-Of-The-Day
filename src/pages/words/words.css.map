@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,qBAAU;EACR,WAAW,EAAE,GAAG;AAElB,uBAAY;EACV,WAAW,EAAE,GAAG;EAChB,KAAK,EAAE,GAAG;EAEV,8BAAQ;IACN,OAAO,EAAE,KAAK",
+"sources": ["words.scss"],
+"names": [],
+"file": "words.css"
+}

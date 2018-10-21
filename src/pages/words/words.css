@@ -1,0 +1,9 @@
+page-words .card-word {
+  font-weight: 300; }
+page-words .card-person {
+  font-weight: 900;
+  color: red; }
+  page-words .card-person:before {
+    content: 'By '; }
+
+/*# sourceMappingURL=words.css.map */
