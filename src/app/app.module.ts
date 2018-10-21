@@ -11,6 +11,7 @@ import {LibraryPage} from "../pages/library/library";
 import {SettingsPage} from "../pages/settings/settings";
 import {WordsPage} from "../pages/words/words";
 import {WordsService} from "../services/words";
+import {WordPage} from "../pages/word/word";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import {WordsService} from "../services/words";
     FavoritesPage,
     LibraryPage,
     SettingsPage,
-    WordsPage,
+    WordPage,
     WordsPage
   ],
   imports: [
@@ -33,7 +34,7 @@ import {WordsService} from "../services/words";
     FavoritesPage,
     LibraryPage,
     SettingsPage,
-    WordsPage,
+    WordPage,
     WordsPage
   ],
   providers: [

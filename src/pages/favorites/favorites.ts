@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the FavoritesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
+import {Word} from "../../data/word.interface";
+import {WordsService} from "../../services/words";
+import {WordPage} from "../word/word";
 
 @IonicPage()
 @Component({
@@ -15,11 +11,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FavoritesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  words: Word[];
+
+  constructor(private wordService: WordsService, private modalCtr: ModalController){}
+
+  ionViewWillEnter(){
+    this.words = this.wordService.getFavoriteWords();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FavoritesPage');
+  onViewWord(word: Word){
+    const modal = this.modalCtr.create(WordPage);
+    modal.present();
   }
+
+
 
 }
