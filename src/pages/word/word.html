@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>word</ion-title>
+    <ion-title>{{person}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -17,11 +17,12 @@
 <ion-card>
 
   <ion-card-content>
-    Lorem ipsum dolor.
+    {{text}}
   </ion-card-content>
   <ion-row>
     <ion-col>
-      <button ion-button small outline color="secondary">Remove Word</button>
+      <!--True meaning we clicked un favorite-->
+      <button ion-button small outline color="secondary" (click)="onCloseModal(true)">Remove Word</button>
     </ion-col>
   </ion-row>
 </ion-card>

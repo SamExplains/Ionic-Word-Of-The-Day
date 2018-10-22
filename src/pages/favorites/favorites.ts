@@ -20,8 +20,12 @@ export class FavoritesPage {
   }
 
   onViewWord(word: Word){
-    const modal = this.modalCtr.create(WordPage);
+    const modal = this.modalCtr.create(WordPage, word);
     modal.present();
+    modal.onDidDismiss((remove: boolean ) => {
+      (remove) ? this.wordService.removeWordFromFavorites(word) : console.log("Blank");
+      console.log(remove);
+    });
   }
 
 

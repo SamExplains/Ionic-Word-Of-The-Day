@@ -15,15 +15,20 @@ import {IonicPage, ModalController, NavController, NavParams, ViewController} fr
 })
 export class WordPage {
 
+  person: string;
+  text: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private viewCtrl: ViewController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WordPage');
+    this.person = this.navParams.get('person');
+    this.text = this.navParams.get('text');
   }
 
-  onCloseModal(){
-    this.viewCtrl.dismiss();
+  onCloseModal(remove = false){
+    this.viewCtrl.dismiss(remove);
   }
 
 }
