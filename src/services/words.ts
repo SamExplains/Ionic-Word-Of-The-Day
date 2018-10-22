@@ -19,5 +19,11 @@ export class WordsService{
     return this.favoriteWords.slice();
   }
 
+  isWordFavorited(word: Word){
+    return this.favoriteWords.find( (wordEl: Word) => {
+      return wordEl.id == word.id;
+    });
+  }
+
 
 }

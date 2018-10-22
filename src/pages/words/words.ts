@@ -18,7 +18,7 @@ export class WordsPage implements OnInit{
     this.wordGroup = this.navParams.data;
   }
 
-  onAddToFavorite(selectedWord: Word){
+  onAddToFavorites(selectedWord: Word){
     const alert = this.alertCtr.create({
       title: 'Add Word',
       subTitle: 'Is that OK?',
@@ -38,8 +38,10 @@ export class WordsPage implements OnInit{
     });
 
     alert.present();
+  }
 
-
+  onRemoveFromFavorites(word: Word){
+    this.wordsService.removeWordFromFavorites(word)
   }
 
   //Alternate method with the Elvis operator (?)
@@ -47,5 +49,10 @@ export class WordsPage implements OnInit{
   //   console.log('ionViewDidLoad WordsPage');
   //   this.wordGroup = this.navParams.data;
   // }
+
+  isFavorite(word: Word){
+    return this.wordsService.isWordFavorited(word);
+  }
+
 
 }

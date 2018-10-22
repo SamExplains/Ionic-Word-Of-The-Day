@@ -22,18 +22,25 @@ export class FavoritesPage {
   onViewWord(word: Word){
     const modal = this.modalCtr.create(WordPage, word);
     modal.present();
+
     modal.onDidDismiss((remove: boolean ) => {
      if (remove) {
-       this.wordService.removeWordFromFavorites(word);
-       const pos = this.words.findIndex( (wordEl: Word) => {
-         return wordEl.id == word.id;
-       });
-        this.words.splice(pos,1);
+        this.onRemoveFromFavorites(word);
         console.log(remove);
      }
       console.log("Blank");
     });
   }
+
+  onRemoveFromFavorites(word: Word){
+    this.wordService.removeWordFromFavorites(word);
+    const pos = this.words.findIndex( (wordEl: Word) => {
+      return wordEl.id == word.id;
+    });
+    this.words.splice(pos,1);
+  }
+
+
 
 
 
