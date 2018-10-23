@@ -21,7 +21,7 @@
 <ion-content padding>
 <ion-list>
   <ion-item-sliding *ngFor="let word of words">
-    <ion-item  (click)="onViewWord(word)" >
+    <ion-item [color]="getBackground()"  (click)="onViewWord(word)" >
       <h3>{{word.person}}</h3>
       <p>{{word.text}}</p>
     </ion-item>

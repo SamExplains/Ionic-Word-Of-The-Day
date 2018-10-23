@@ -4,6 +4,7 @@ import {Word} from "../../data/word.interface";
 import {WordsService} from "../../services/words";
 import {WordPage} from "../word/word";
 import {root} from "rxjs/util/root";
+import {SettingsService} from "../../services/settings";
 
 @IonicPage()
 @Component({
@@ -14,7 +15,7 @@ export class FavoritesPage {
 
   words: Word[];
 
-  constructor(private wordService: WordsService, private modalCtr: ModalController){}
+  constructor(private wordService: WordsService, private modalCtr: ModalController, private settingsService: SettingsService){}
 
   ionViewWillEnter(){
     this.words = this.wordService.getFavoriteWords();
@@ -39,6 +40,10 @@ export class FavoritesPage {
       return wordEl.id == word.id;
     });
     this.words.splice(pos,1);
+  }
+
+  getBackground(){
+    return this.settingsService.isAlternateBackground() ? 'secondAppBackground' : '';
   }
 
 

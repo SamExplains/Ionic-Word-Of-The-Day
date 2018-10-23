@@ -25,7 +25,7 @@
         <ion-label>Alternate Background Color</ion-label>
       </ion-col>
       <ion-col col-2>
-        <ion-toggle (ionChange)="onToggle($event)" [checked]="checkAlternateBackground()" ></ion-toggle>
+        <ion-toggle (ionChange)="onToggle($event)" (ngModelChange)="checkAlternateBackground()" ></ion-toggle>
       </ion-col>
     </ion-row>
   </ion-grid>

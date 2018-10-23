@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, Toggle} from 'ionic-angular';
+import {IonicPage, Toggle} from 'ionic-angular';
 import {SettingsService} from '../../services/settings';
 
 /**
@@ -25,10 +25,11 @@ export class SettingsPage {
 
   onToggle(toggle: Toggle){
     this.settingService.setBackground(toggle.checked);
-    // console.log(toggle);
+    console.log(toggle);
   }
 
   checkAlternateBackground(){
+    console.log('We got a ' + this.settingService.isAlternateBackground() );
     this.settingService.isAlternateBackground();
   }
 
