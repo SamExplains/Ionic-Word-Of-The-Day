@@ -12,6 +12,7 @@ import {SettingsPage} from "../pages/settings/settings";
 import {WordsPage} from "../pages/words/words";
 import {WordsService} from "../services/words";
 import {WordPage} from "../pages/word/word";
+import {SettingsService} from "../services/settings";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import {WordPage} from "../pages/word/word";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    WordsService
+    WordsService, SettingsService
   ]
 })
 export class AppModule {}
